@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>出國前的保險與醫療｜遊學先算清楚</title>
-<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/base.css"></head>
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/base.css"><script src="assets/stats.js"></script></head>
 <body><main class="wide">
 <p><a href="index.html">← 遊學先算清楚</a></p>
 <h1>出國前的保險與醫療</h1>
@@ -62,7 +62,7 @@
 <li id="h12">Western Visayas Medical Center 公民憲章，2024-11（官方）（2026-11-20 讀取）：<a href="https://wvmc.doh.gov.ph/wp-content/uploads/2024/11/Citizens-Charter_v3-11282024_compiled.pdf">wvmc.doh.gov.ph</a></li>
 <li id="h13">Healthway QualiMed Iloilo 官網（2026-11-20 讀取）：<a href="https://healthwaymedicalnetwork.com.ph/our-network/healthway-qualimed-hospital-iloilo/">healthwaymedicalnetwork.com.ph</a></li>
 </ol>
-<p class="meta">資料截至 2026-11-20<br>看到錯誤或過時的資料？<a href="https://docs.google.com/forms/d/e/1FAIpQLSfvSmct34UaInZlQK5Uz5uc8GssAQWaxbEt6VkRSK1rKSOWSQ/viewform" target="_blank" rel="noopener">回報</a></p>
+<p class="meta">資料截至 2026-11-20<br>看到錯誤或過時的資料？<a href="https://docs.google.com/forms/d/e/1FAIpQLSfvSmct34UaInZlQK5Uz5uc8GssAQWaxbEt6VkRSK1rKSOWSQ/viewform" onclick="ycCount(\'report-click\')" target="_blank" rel="noopener">回報</a></p>
 </main>
-<script>document.getElementById('copy').addEventListener('click',async e=>{const t=[...document.querySelectorAll('ol.q li')].map((l,i)=>`${i+1}. ${l.innerText.replace(/\[\d+\]/g,'')}`).join('\n');try{await navigator.clipboard.writeText(t);e.target.textContent='已複製';}catch(_){e.target.textContent='請長按上面的文字複製';}setTimeout(()=>e.target.textContent='複製這些問題',2000);});</script>
+<script>document.getElementById('copy').addEventListener('click',async e=>{ycCount('checklist-copy-health');const t=[...document.querySelectorAll('ol.q li')].map((l,i)=>`${i+1}. ${l.innerText.replace(/\[\d+\]/g,'')}`).join('\n');try{await navigator.clipboard.writeText(t);e.target.textContent='已複製';}catch(_){e.target.textContent='請長按上面的文字複製';}setTimeout(()=>e.target.textContent='複製這些問題',2000);});</script>
 </body></html>

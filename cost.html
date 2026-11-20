@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>算算我的費用｜遊學先算清楚</title>
 <meta name="description" content="去菲律賓讀語言學校，除了學費和住宿還要付哪些錢？選好週數、房型和出發月份，列出每一項費用和報名前要問的問題。">
-<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/base.css"></head>
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/base.css"><script src="assets/stats.js"></script></head>
 <body><main class="wide">
 <p><a href="index.html">← 遊學先算清楚</a></p>
 <h1>算算我的費用</h1>
@@ -45,7 +45,7 @@
 <li id="s13">菲律賓移民局 Operations Order No. SBM-2015-009（2015-04-16）：持觀光簽證停留 6 個月以上，離境前須取得 ECC（官方，菲律賓司法院電子圖書館收錄），2026-11-19 讀取：<a href="https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/10/69548">elibrary.judiciary.gov.ph</a></li>
 <li id="s14">菲律賓移民局長灘島辦事處公民憲章 2026 年第 1 版（2026-09-21）Special Study Permit 一節：Standard Fees ₱5,740＋₱3,740＝₱9,480，Plus ACR I-card Fee US$50（BSP Forex Rate）（官方），2026-11-19 讀取：<a href="https://immigration.gov.ph/wp-content/uploads/2026/10/43-BoracayImmigrationFieldOffice-CC2026-1stEdition-21Sep2026.pdf">immigration.gov.ph</a></li>
 </ol>
-<p class="meta">資料截至 2026-11-19｜本頁更新 2026-11-19<br>學校公告會變，實際金額以你拿到的書面報價為準。看到錯誤或過時的資料？<a href="https://docs.google.com/forms/d/e/1FAIpQLSfvSmct34UaInZlQK5Uz5uc8GssAQWaxbEt6VkRSK1rKSOWSQ/viewform" target="_blank" rel="noopener">回報</a></p>
+<p class="meta">資料截至 2026-11-19｜本頁更新 2026-11-19<br>學校公告會變，實際金額以你拿到的書面報價為準。看到錯誤或過時的資料？<a href="https://docs.google.com/forms/d/e/1FAIpQLSfvSmct34UaInZlQK5Uz5uc8GssAQWaxbEt6VkRSK1rKSOWSQ/viewform" onclick="ycCount(\'report-click\')" target="_blank" rel="noopener">回報</a></p>
 </main>
 <script>
 const m=document.querySelector('[name=month]');
@@ -97,7 +97,8 @@ function render(){
   window._qs=qs;
 }
 f.addEventListener('change',render); render();
-document.getElementById('copy').addEventListener('click',async e=>{
+f.addEventListener('change',()=>{if(!window._ycStart){window._ycStart=1;ycCount('cost-start');}});
+document.getElementById('copy').addEventListener('click',async e=>{ycCount('checklist-copy-cost');
   const t=window._qs.map((q,i)=>`${i+1}. ${q}`).join('\n');
   try{await navigator.clipboard.writeText(t);e.target.textContent='已複製';}catch(_){e.target.textContent='請長按上面的文字複製';}
   setTimeout(()=>e.target.textContent='複製這些問題',2000);
