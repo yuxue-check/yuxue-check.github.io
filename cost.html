@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>算算我的費用｜遊學先算清楚</title>
+<meta name="description" content="去菲律賓讀語言學校，除了學費和住宿還要付哪些錢？選好週數、房型和出發月份，列出每一項費用和報名前要問的問題。">
+<link rel="stylesheet" href="assets/tokens.css"><link rel="stylesheet" href="assets/base.css"></head>
+<body><main class="wide">
+<p><a href="index.html">← 遊學先算清楚</a></p>
+<h1>算算我的費用</h1>
+<p class="subtitle">選好你的條件，列出這趟需要哪些費用，和報名前你需要跟學校或代辦確認的事。</p>
+<form id="f">
+<label>去哪裡<select name="place"><option>菲律賓（宿霧、碧瑤、克拉克、馬尼拉、怡朗）</option></select></label>
+<label>讀幾週<select name="weeks"><option value="4">4 週</option><option value="8">8 週</option><option value="12">12 週</option><option value="24">24 週</option><option value="30">超過 24 週</option></select></label>
+<label>想住哪種房型<select name="room"><option value="1">單人房</option><option value="2">雙人房</option><option value="3" selected>三到四人房</option><option value="6">五人以上</option><option value="out">校外住宿</option></select></label>
+<label>出發月份<select name="month"></select></label>
+<label>你的護照<select name="pp"><option value="tw">台灣護照</option><option value="v30">日本、韓國等免簽 30 天的國家</option><option value="other">其他國家</option></select></label>
+<label>誰要去<select name="who"><option value="adult">自己（成人）</option><option value="child">帶小孩一起</option><option value="minor">未成年子女自己去</option></select></label>
+</form>
+
+<div class="why"><strong>為什麼有些欄位還是空的？</strong>很多學校沒有公開完整的費用和規定，網路上各家說法也常互相矛盾。我們會逐一向學校和代辦詢問，請他們提供完整資訊；拿到就第一時間更新，並標上最後查驗日期。還沒公開的部分，我們先把找得到的公開資料分清楚、整理在同一個地方，讓你不用東查一個網站、西查一個網站，越查越亂。</div>
+
+<h2>需要哪些費用</h2>
+<p class="note">表格裡的金額是<strong>官方公告</strong>或<strong>個別學校的公告例子</strong>，不是你的報價，也不能直接相加；你選的條件只用來整理要確認的項目，不會算出總價。手機上可以左右滑動表格。最後查驗：2026-11-19。</p>
+<div class="tablewrap"><table class="fees"><thead><tr><th>費用項目</th><th>付給誰／何時付</th><th>官方規定或金額</th><th>學校公告的例子</th><th>要確認的事</th></tr></thead><tbody id="items"></tbody></table></div>
+<p class="note" id="visanote"></p>
+
+<h2>報名前你需要跟學校或代辦確認的事</h2>
+<p class="note">依你選的條件整理，可以直接複製傳給學校或代辦。</p>
+<ol class="q" id="qs"></ol>
+<button type="button" class="btn" id="copy">複製這些問題</button>
+
+<h2 id="sources">資料出處</h2>
+<ol class="src">
+<li id="s1">QQEnglish 官網 Plan &amp; Price（學校自述），2026-11-19 讀取：<a href="https://qqeng.net/study-english-abroad/plan-price/">qqeng.net</a></li>
+<li id="s2">CIP English 官網 Tuition Table，標「From March 1, 2026」（學校自述），2026-11-19 讀取：<a href="https://cipenglish.net/extra-links/tuition-table/">cipenglish.net</a></li>
+<li id="s3">Baguio JIC 官網 Price，頁面修改日 2026-05-07（學校自述），2026-11-19 讀取：<a href="https://baguio-jic.com/price/">baguio-jic.com</a></li>
+<li id="s4">HELP English 官網 Tuition and Fees，標「Effective from November 4, 2026」（學校自述），2026-11-19 讀取：<a href="https://www.helpenglish.org/p/tuition-and-fees.html">helpenglish.org</a></li>
+<li id="s5">Winning English Academy 官網 FAQ（學校自述，頁面未標日期），2026-11-19 讀取：<a href="https://winningenglishschool.com/faq/">winningenglishschool.com</a></li>
+<li id="s6">Philinter 官網宿舍 FAQ（學校自述），2026-11-19 讀取：<a href="https://philinter.com/faqs/dormitory/">philinter.com</a></li>
+<li id="s7">菲律賓移民局（BI）官網 Visa Waiver 頁，停留超過 59 天須辦 ACR I-Card（官方；該頁費率標 2014-03-06，金額不採用），2026-11-19 讀取：<a href="https://immigration.gov.ph/visas/visa-waiver/">immigration.gov.ph</a></li>
+<li id="s8">菲律賓移民局 SSP 說明頁（官方），2026-11-19 讀取：<a href="https://immigration.gov.ph/services/special-study-permit/">immigration.gov.ph</a></li>
+<li id="s9">經濟日報〈留遊學保險〉，2026-08-02（媒體）：<a href="https://udn.com/news/story/7239/9665063">udn.com</a></li>
+<li id="s10">駐菲律賓臺北經濟文化辦事處〈簽證及入境須知〉（官方，頁面更新 2026-07-01）：台灣護照免簽 14 天、免簽入境不得改換其他簽證、ETA 停留 30 天、MECO 短期停留簽證 59 天、入境後延期向菲律賓移民局辦理、登機前完成 eTravel 登錄，2026-11-19 讀取：<a href="https://www.roc-taiwan.org/ph/post/6596.html">roc-taiwan.org</a>；免簽延長到 2027-06-30，見 <a href="https://focustaiwan.tw/politics/202607010008">中央社 2026-07-01</a></li>
+<li id="s11">馬尼拉經濟文化辦事處（MECO，官方）：<a href="https://www.meco.org.tw/">meco.org.tw</a></li>
+
+<li id="s12">菲律賓駐大阪總領事館〈Waiver of Exclusion Ground（WEG）〉（官方，2024-11-22 更新）：未滿 15 歲、無父母同行的外國兒童入境要辦 WEG，2026-11-19 讀取：<a href="https://osakapcg.dfa.gov.ph/consular-services/consular-requirements/other-services/waiver-of-exclusion-ground-weg">osakapcg.dfa.gov.ph</a></li>
+<li id="s13">菲律賓移民局 Operations Order No. SBM-2015-009（2015-04-16）：持觀光簽證停留 6 個月以上，離境前須取得 ECC（官方，菲律賓司法院電子圖書館收錄），2026-11-19 讀取：<a href="https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/10/69548">elibrary.judiciary.gov.ph</a></li>
+<li id="s14">菲律賓移民局長灘島辦事處公民憲章 2026 年第 1 版（2026-09-21）Special Study Permit 一節：Standard Fees ₱5,740＋₱3,740＝₱9,480，Plus ACR I-card Fee US$50（BSP Forex Rate）（官方），2026-11-19 讀取：<a href="https://immigration.gov.ph/wp-content/uploads/2026/10/43-BoracayImmigrationFieldOffice-CC2026-1stEdition-21Sep2026.pdf">immigration.gov.ph</a></li>
+</ol>
+<p class="meta">資料截至 2026-11-19｜本頁更新 2026-11-19<br>學校公告會變，實際金額以你拿到的書面報價為準。看到錯誤或過時的資料？<a href="https://docs.google.com/forms/d/e/1FAIpQLSfvSmct34UaInZlQK5Uz5uc8GssAQWaxbEt6VkRSK1rKSOWSQ/viewform" target="_blank" rel="noopener">回報</a></p>
+</main>
+<script>
+const m=document.querySelector('[name=month]');
+for(let i=1;i<=12;i++){const o=document.createElement('option');o.value=i;o.textContent=i+' 月';m.appendChild(o);}
+const f=document.getElementById('f');
+const src=n=>n.map(i=>`<a href="#s${i}">[${i}]</a>`).join('');
+const c=i=>`<a href="#s${i}">[${i}]</a>`;
+function visa(d,w){
+  const days=w*7, wk=w>24?'超過 24 週':w+' 週';
+  if(d.pp==='tw') return {row:{k:'入境簽證（台灣護照）',who:'MECO／<strong>出發前</strong>辦好',off:`免簽每次只能停留 14 天，入境後不能延長或改換簽證；ETA 可停留 30 天；MECO 短期停留簽證 59 天 ${c(10)}`,ex:'—',ask:'簽證費以 MECO 公告為準；所有旅客登機前要完成 eTravel 登錄 '+c(10)},
+    note:'<strong>你讀 '+wk+'：</strong>'+(days+2<=30?'ETA 的 30 天可能就夠，記得把開課前後的天數也算進去。':days+2<=59?'ETA 的 30 天不夠；59 天的簽證可能剛好夠，記得把開課前後的天數也算進去。':'出發前先辦 59 天簽證，入境後還要在當地向菲律賓移民局延簽；要延幾次，看入境時核准的停留期限和當時規定，學校多半代辦。')+'（這項 14 天免簽措施目前實施到 2027-06-30。）'};
+  if(d.pp==='v30') return {row:{k:'簽證延期',who:'菲律賓移民局（學校多代辦）／停留滿 30 天前',off:`免簽可停留 30 天 ${c(7)}`,ex:'—',ask:'要延幾次、每次多少錢、學校代不代辦'},
+    note:'<strong>你讀 '+wk+'：</strong>'+(days+2<=30?'通常還在免簽天數內，記得把開課前後的天數也算進去。':'會超過免簽天數，要在當地延簽；次數和費用看入境時核准的停留期限和當時規定。')};
+  return {row:{k:'入境簽證',who:'依你的護照',off:'請查你護照所屬國家或地區的菲律賓使館、代表處公告',ex:'—',ask:'入境許可是否涵蓋完整停留期間'},note:''};
+}
+function render(){
+  const d=Object.fromEntries(new FormData(f)); const w=+d.weeks; const out=d.room==='out'; const V=visa(d,w);
+  const R=[
+    {k:'學費',who:'學校／報名時',off:'—',ex:'依課程、一對一堂數和週數，各校差異大；多用美元、以 4 週為單位列',ask:'出發月份算淡季還是旺季；報價是哪一天的價目'},
+    {k:out?'校外住宿':'住宿＋餐',who:out?'房東或合作住宿':'學校／報名時',off:'—',ex:out?'房租、餐費、交通自己算':'依房型（名稱和人數以各校為準）',ask:out?'學校有沒有合作的住宿':'一天幾餐、週末和假日有沒有供餐'},
+    {k:'註冊費',who:'學校／報名時，一次',off:'—',ex:`US$100 ${c(3)}、US$150 ${c(1)}`,ask:`取消退不退（有學校寫明不退 ${c(3)}）`},
+    {k:'特別就學許可（SSP）',who:'菲律賓移民局（多由學校代辦代收）／到校後',off:`₱9,480＋ACR I-Card 卡費 US$50（移民局長灘島辦事處 2026 年公告；適用英語課程學生）${c(14)}`,ex:`₱6,800 ${c(2)}；₱7,800＋卡費 ₱4,500 ${c(3)}；₱10,440 ${c(1)}；連卡費一筆 ₱12,300 ${c(4)}`,ask:'代收金額含哪些、哪一年的價、含不含卡費'},
+    V.row,
+    {k:'外國人登記證（ACR I-Card）',who:'菲律賓移民局（學校多代辦）',off:`停留超過 59 天通常要辦（以移民局現行規定為準）${c(7)}`,ex:w>8?`₱3,200 ${c(1)}、₱4,000 ${c(2)}`:'你這次的週數可能用不到',ask:'收的是哪一張卡、會不會和 SSP 的卡重複'},
+    {k:'水電費',who:'學校／每週或每 4 週',off:'—',ex:`每週 ₱700 ${c(5)}；4 週 ₱3,000 ${c(3)}；4 週基本 ₱2,000＋管理 ₱1,200 ${c(2)}；超用每度 ₱25 ${c(6)}`,ask:'冷氣電費怎麼算'},
+    {k:'押金',who:'學校／到校時，離校退還',off:'—',ex:`₱3,000 ${c(2)}${c(3)}${c(4)}；₱3,500 ${c(5)}`,ask:'扣款規則（例如鑰匙卡遺失）'},
+    {k:'教材',who:'學校',off:'—',ex:`₱1,000–₱2,000 ${c(1)}；4 週 ₱2,000 ${c(2)}`,ask:'換課程要不要重買'},
+    {k:'學生證、洗衣',who:'學校',off:'—',ex:`學生證 ₱200 ${c(3)}、₱300 ${c(1)}；洗衣 4 週 ₱1,200 ${c(3)}`,ask:'洗衣按次還是按週'},
+    {k:'機場接機',who:'學校／抵達時',off:'—',ex:`₱800 ${c(2)}、₱1,000 ${c(5)}；從馬尼拉機場接 ₱4,000 ${c(2)}；US$30 ${c(1)}`,ask:'從哪個機場接、幾點以後加價'},
+    {k:'保險',who:'保險公司／出發前',off:'—',ex:'—',ask:(w>24?'停留超過半年，部分旅平險天數不夠，可能要長天期留遊學保險；':'')+`保障期間涵蓋整段行程、海外醫療限額、除外事項、24 小時救援電話；有的旅平險要另外加保「海外突發疾病」${c(9)}`},
+    {k:'機票與生活費',who:'自己',off:'—',ex:'—',ask:'機票、週末出遊、外食、網路、換匯手續費'},
+  ];
+  if(w>24) R.push({k:'離境許可（ECC）',who:'菲律賓移民局／離境前',off:`在菲律賓停留 6 個月以上，離境前要辦 ${c(13)}`,ex:'—',ask:'學校代不代辦、費用多少、要不要親自去'});
+  if(d.who!=='adult') R.push({k:'未成年相關',who:'學校',off:d.who==='minor'?`未滿 15 歲、沒有父母同行入境，要辦 WEG 文件 ${c(12)}`:'—',ex:d.who==='child'?'有的收 5 歲以上，也有一般課程只收 18 歲以上':'個別學校另訂住校最低年齡（例：16 歲以上）',ask:d.who==='child'?'親子課程或陪讀、家長能否同住、家長要不要上課':'監護人文件、未成年門禁和外出規定'});
+  document.getElementById('items').innerHTML=R.map(x=>`<tr><th scope="row">${x.k}</th><td>${x.who}</td><td>${x.off}</td><td>${x.ex}</td><td>${x.ask}</td></tr>`).join('');
+  document.getElementById('visanote').innerHTML=V.note;
+  const qs=['報價含哪些項目？哪些要到當地才付？（SSP、卡費、簽證延期、水電、教材、押金）',
+    '這份報價是哪一天的價目？',
+    `${d.month} 月出發算淡季還是旺季？價格有沒有不同？`,
+    out?'學校有沒有合作的校外住宿？上下學怎麼走？':'這個房型目前還有空位嗎？換房要另外收費嗎？',
+    '分班考（入學程度測驗）、晨考（早上的小考）、外出與假日管理的規定是什麼？有書面校規嗎？',
+    '遇到失竊或室友問題，學校的申訴窗口是誰？有沒有中文窗口？',
+    '提早離開或換課程，怎麼退費？有書面條款嗎？'];
+  if(w*7+2>30||d.pp==='tw') qs.push('入境後還要延簽嗎？簽證延期和 ACR I-Card 由學校代辦嗎？要辦幾次、各多少錢？');
+  if(d.who!=='adult') qs.push('孩子這個年紀能報哪些課？家長能同住嗎？未成年的門禁和外出規定是什麼？');
+  document.getElementById('qs').innerHTML=qs.map(q=>`<li>${q}</li>`).join('');
+  window._qs=qs;
+}
+f.addEventListener('change',render); render();
+document.getElementById('copy').addEventListener('click',async e=>{
+  const t=window._qs.map((q,i)=>`${i+1}. ${q}`).join('\n');
+  try{await navigator.clipboard.writeText(t);e.target.textContent='已複製';}catch(_){e.target.textContent='請長按上面的文字複製';}
+  setTimeout(()=>e.target.textContent='複製這些問題',2000);
+});
+</script></body></html>

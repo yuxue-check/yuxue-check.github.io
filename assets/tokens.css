@@ -1,0 +1,10 @@
+/* 外觀模組：只改這一檔就能換整站的顏色、字體、間距（定案後由設計系統覆蓋） */
+:root{
+  --color-bg:#ffffff; --color-surface:#f6f6f4; --color-text:#1f2328; --color-muted:#5b6470;
+  --color-accent:#2f6f5e; --color-accent-contrast:#ffffff; --color-border:#e3e3df;
+  --status-verified:#2f6f5e; --status-reported:#8a6d1d; --status-unknown:#6b7280;
+  --font-body:"Noto Sans TC",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;
+  --font-heading:var(--font-body);
+  --radius:10px; --space-1:4px; --space-2:8px; --space-3:16px; --space-4:24px; --space-5:40px;
+  --max-width:720px;
+}
